@@ -125,4 +125,12 @@ footer {
     ul.show {
         display: flex;
     }
+
+    #toggle {
+        display: block;
+        background: none;
+        color: white;
+        font-size: 24px;
+        border: none;
+    }
 }
