@@ -5,9 +5,16 @@
     font-family: Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     line-height: 1.6;
+    background: #fff;
 }
+
+/* ---------------- Header ---------------- */
 
 .container {
     max-width: 1100px;
@@ -20,6 +27,7 @@ header {
     color: white;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .nav {
@@ -44,9 +52,21 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #00ffd5;
+}
+
+
 #toggle {
     display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
 }
+
+/* ---------------- Hero ---------------- */
 
 .hero {
     height: 90vh;
@@ -56,6 +76,16 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .btn {
@@ -64,16 +94,29 @@ a {
     background: #00ffd5;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* ---------------- Sections ---------------- */
 
 .section {
     padding: 60px 20px;
     text-align: center;
 }
 
+.section h2 {
+    margin-bottom: 25px;
+}
+
 .gray {
     background: #f4f4f4;
 }
+
+/* ---------------- Grid Cards ---------------- */
 
 .grid {
     display: grid;
@@ -84,10 +127,17 @@ a {
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    transition: 0.3s;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ---------------- Contact ---------------- */
 
 form {
     max-width: 400px;
@@ -99,8 +149,16 @@ form {
 
 input,
 textarea {
-    padding: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
+
+textarea {
+    min-height: 100px;
+}
+
+/* ---------------- Footer ---------------- */
 
 footer {
     background: #111;
@@ -109,7 +167,7 @@ footer {
     padding: 15px;
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
 
 @media(max-width:768px) {
     ul {
@@ -120,17 +178,23 @@ footer {
         background: #111;
         flex-direction: column;
         display: none;
+        padding: 20px 0;
+        text-align: center;
     }
 
     ul.show {
         display: flex;
     }
 
+    ul li {
+        padding: 12px 0;
+    }
+
     #toggle {
         display: block;
-        background: none;
-        color: white;
-        font-size: 24px;
-        border: none;
+    }
+
+    .hero h1 {
+        font-size: 34px;
     }
 }
